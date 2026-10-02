@@ -19,7 +19,6 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
     window.location.href = "https://www.google.com";
   };
 
-  // Still checking
   if (verified === null) {
     return (
       <div className="fixed inset-0 bg-[var(--color-bg)] flex items-center justify-center">
@@ -36,7 +35,7 @@ export function AgeGate({ children }: { children: React.ReactNode }) {
         className="fixed inset-0 z-50 flex items-center justify-center p-6"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(12,11,10,0.88), rgba(12,11,10,0.96)), url(https://images.unsplash.com/photo-1599599823227-c802258fd183?auto=format&fit=crop&w=1600&q=80)",
+            "linear-gradient(to bottom, rgba(12,11,10,0.75), rgba(12,11,10,0.92)), url('/IMG_1024-1.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

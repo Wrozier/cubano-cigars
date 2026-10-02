@@ -1,6 +1,44 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ProductCard } from "@/components/ProductCard";
+import { HeritageStory } from "@/components/HeritageStory";
 import { fetchProducts } from "@/lib/products";
+
+const featuredWith = [
+  {
+    name: "2022 NFL Draft",
+    image: "https://smokecubano.com/wp-content/uploads/2022/09/2022_Draft_logo.png",
+  },
+  {
+    name: "The Daily Dish: Married to Medicine",
+    image:
+      "https://smokecubano.com/wp-content/uploads/2022/09/daily-dish-married-to-medicine-announcement.png",
+  },
+  {
+    name: "ACW",
+    image:
+      "https://smokecubano.com/wp-content/uploads/2022/09/acw-logo_2cf5c7e1-2707-4a80-8c53-c3cae26c5c2c_315x_2x.png",
+  },
+  {
+    name: "Harley-Davidson",
+    image:
+      "https://smokecubano.com/wp-content/uploads/2022/09/1200px-Harley-Davidson_logo.svg.png",
+  },
+  {
+    name: "The Masters",
+    image: "https://smokecubano.com/wp-content/uploads/2026/08/The-Masters.png",
+  },
+  {
+    name: "Seabreeze Jazz Festival",
+    image:
+      "https://smokecubano.com/wp-content/uploads/2026/08/Seabreeze-Jazz-Festival-1.png",
+  },
+  {
+    name: "Vineyard Fest",
+    image:
+      "https://smokecubano.com/wp-content/uploads/2026/08/Vineyard-Fest-logo.png",
+  },
+];
 
 export default async function HomePage() {
   const products = (await fetchProducts()).slice(0, 4);
@@ -36,7 +74,7 @@ export default async function HomePage() {
           </div>
           <div className="relative flex justify-center">
             <img
-              src="https://images.unsplash.com/photo-1599599823227-c802258fd183?auto=format&fit=crop&w=900&q=80"
+              src="https://smokecubano.com/wp-content/uploads/2026/08/Website-Photo-New.png"
               alt="Premium Cubano Cigars"
               className="rounded max-h-[520px] object-cover shadow-2xl"
             />
@@ -117,39 +155,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Story */}
-      <section id="story" className="py-24 bg-[var(--color-bg-elevated)]">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1606103920295-9a3020744629?auto=format&fit=crop&w=800&q=80"
-              alt="Cigar craftsmanship"
-              className="rounded shadow-2xl"
-            />
-          </div>
-          <div>
-            <p className="text-xs tracking-[0.2em] uppercase text-[var(--color-gold)] mb-3">
-              Our Heritage
-            </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-5">
-              Five Generations of Craft
-            </h2>
-            <p className="text-[var(--color-text-muted)] text-lg mb-8 leading-relaxed">
-              In the early 1800s, Pastora Rodriguez and Geronimo Falco moved from
-              Havana, Cuba to Key West. Geronimo, a skilled torcedor, taught his
-              sons the art of cigar rolling. That legacy lives on today through
-              Cubano Cigars — a tribute to Cuban heritage, refined for the modern
-              connoisseur.
-            </p>
-            <Link
-              href="/#heritage"
-              className="inline-flex px-7 py-3.5 bg-[var(--color-gold)] text-[var(--color-bg)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold-light)] transition-colors"
-            >
-              Read Our Full Story
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeritageStory />
 
       {/* Values */}
       <section id="heritage" className="py-24">
@@ -204,6 +210,41 @@ export default async function HomePage() {
           >
             Shop the Collection
           </Link>
+        </div>
+      </section>
+
+      {/* Featured With */}
+      <section className="py-20 border-t border-[var(--color-border)]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs tracking-[0.2em] uppercase text-[var(--color-gold)] mb-3">
+              Our Partners &amp; Features
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl">
+              Recently Featured With
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 items-stretch">
+            {featuredWith.map((feature) => (
+              <a
+                key={feature.name}
+                href={feature.image}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`View ${feature.name} feature image`}
+                className="flex h-36 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-5 transition-colors hover:border-[var(--color-gold)]"
+              >
+                <Image
+                  src={feature.image}
+                  alt={feature.name}
+                  width={240}
+                  height={120}
+                  unoptimized
+                  className="max-h-full max-w-full object-contain"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </>

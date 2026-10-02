@@ -34,10 +34,10 @@ export function Header() {
             Cigars
           </Link>
           <Link
-            href="/#"
+            href="/private-events"
             className="text-xs tracking-wider uppercase text-[var(--color-text-muted)] hover:text-[var(--color-gold)] transition-colors"
           >
-            Accessories
+            Private Events
           </Link>
           <Link
             href="/#heritage"
@@ -120,6 +120,7 @@ export function Header() {
         <div className="md:hidden absolute top-20 left-0 right-0 bg-[var(--color-bg-elevated)] border-b border-[var(--color-border)] p-6 flex flex-col gap-4">
           <Link href="/#story" onClick={() => setOpen(false)}>Our Story</Link>
           <Link href="/shop" onClick={() => setOpen(false)}>Cigars</Link>
+          <Link href="/private-events" onClick={() => setOpen(false)}>Private Events</Link>
           <Link href="/shop" onClick={() => setOpen(false)}>Shop Collection</Link>
           <Link href="/#contact" onClick={() => setOpen(false)}>Contact</Link>
         </div>
