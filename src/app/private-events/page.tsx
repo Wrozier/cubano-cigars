@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PrivateEventContactDialog } from "@/components/PrivateEventContactDialog";
 
 export const metadata = {
   title: "Private Events — Cubano Cigars",
@@ -79,7 +78,12 @@ export default function PrivateEventsPage() {
                 craft, and hospitality to every gathering.
               </p>
               <div className="flex flex-wrap gap-4">
-                <PrivateEventContactDialog />
+                <Link
+                  href="/member/book"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-gold)] text-[var(--color-bg)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold-light)] transition-colors"
+                >
+                  Book an Event
+                </Link>
                 <Link
                   href="/shop"
                   className="inline-flex items-center gap-2 px-7 py-3.5 border border-[var(--color-gold)] text-[var(--color-gold)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold)] hover:text-[var(--color-bg)] transition-colors"
@@ -220,14 +224,12 @@ export default function PrivateEventsPage() {
                 $1,000
               </p>
             </div>
-            <a
-              href="https://smokecubano.com/private-events/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI0MiIsInRvZ2dsZSI6ZmFsc2V9"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/member/book"
               className="inline-flex px-7 py-3.5 bg-[var(--color-gold)] text-[var(--color-bg)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold-light)] transition-colors"
             >
               Book Here
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -276,14 +278,12 @@ export default function PrivateEventsPage() {
                 </li>
               ))}
             </ul>
-            <a
-              href="https://smokecubano.com/private-events/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI0NSIsInRvZ2dsZSI6ZmFsc2V9"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/member/book"
               className="inline-flex px-7 py-3.5 bg-[var(--color-gold)] text-[var(--color-bg)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold-light)] transition-colors"
             >
               Book Here
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -296,12 +296,12 @@ export default function PrivateEventsPage() {
           <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl mb-4">
             A memorable gathering starts with the right atmosphere.
           </h2>
-          <a
-            href="mailto:tdean@smokecubano.com?subject=Private%20Event%20Inquiry"
+          <Link
+            href="/member/book"
             className="inline-flex px-7 py-3.5 bg-[var(--color-gold)] text-[var(--color-bg)] text-sm font-medium tracking-wider uppercase hover:bg-[var(--color-gold-light)] transition-colors"
           >
-            Inquire Today
-          </a>
+            Request an Event
+          </Link>
         </div>
       </section>
     </div>

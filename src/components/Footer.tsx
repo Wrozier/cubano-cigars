@@ -37,6 +37,9 @@ export function Footer() {
               <Link href="/private-events" className="hover:text-[var(--color-gold)]">
                 Private Events
               </Link>
+              <Link href="/membership" className="hover:text-[var(--color-gold)]">
+                Membership
+              </Link>
               <Link href="/#" className="hover:text-[var(--color-gold)]">
                 Journal
               </Link>
